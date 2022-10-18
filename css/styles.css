@@ -1,0 +1,196 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* ---------- LOADER ------------ */
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: translate(-50%, -50%);
+}
+
+.flashBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+    animation: animatebottom 1s;
+}
+
+@keyframes animatebottom {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#myDiv {
+    display: none;
+    text-align: center;
+}
+
+/* -------------------------------------------*/
+
+.homepage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.snowFall::after {
+    content: url("../img/Snow.svg");
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: infinite-slide 4s linear infinite;
+}
+
+.back {
+    height: 100%;
+    width: 100%;
+}
+
+.board {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    transform: translateX(-30px);
+    animation: pulsate 1.5s linear infinite alternate forwards;
+}
+
+.getting-started {
+    height: 300px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.main__board {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    opacity: 0;
+    z-index: 20;
+    animation: slide 1.8s linear 1s forwards;
+}
+
+.main__board .board {
+    animation-delay: 3.3s;
+}
+
+.coa {
+    height: 320px;
+    width: 250px;
+    transform: translateY(-30px);
+    position: relative;
+}
+
+.board__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.b1 {
+    transform: translateY(-65%);
+}
+
+.b2 {
+    transform: translateY(-67%);
+}
+
+.b3 {
+    transform: translateY(-117%);
+}
+
+.b1-img,
+.b2-img,
+.b3-img {
+    height: 68px;
+    width: 150px;
+}
+
+.b2-img {
+    height: 90px;
+}
+
+.birthday__board {
+    height: 100px;
+    width: 650px;
+    position: absolute;
+    top: 28%;
+    left: 22%;
+    z-index: 100;
+    opacity: 0;
+    animation: fade 2s linear 1s forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.bday-img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: translateX(-30px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(30px);
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(-250px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes infinite-slide {
+    0% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(20%);
+    }
+}

@@ -1,0 +1,387 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---------- LOADER ------------ */
+
+#loader {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.flashBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* border-radius: 50%; */
+    object-fit: cover;
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+    animation: animatebottom 1s;
+}
+
+@keyframes animatebottom {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#myDiv {
+    display: none;
+    text-align: center;
+}
+
+/* -------------------------------------------*/
+
+.wishes-background {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wishes-background::after {
+    content: url("../img/Stars.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+        /* transform: scale(.25); */
+    }
+
+    100% {
+        opacity: 1;
+        /* transform: scale(.75); */
+    }
+}
+
+.wishes-background>img:first-child {
+    height: 108%;
+    width: 100%;
+}
+
+.flake-1,
+.flake-2,
+.flake-3 {
+    width: 100%;
+    height: 100%;
+}
+
+.box-1 {
+    position: absolute;
+    left: 9%;
+    top: 6rem;
+    width: 9rem;
+    height: 9rem;
+}
+
+.box-2 {
+    position: absolute;
+    right: 20%;
+    top: 6rem;
+    width: 9rem;
+    height: 9rem;
+}
+
+.box-3 {
+    position: absolute;
+    left: 40%;
+    top: 13rem;
+    width: 8rem;
+    height: 8rem;
+}
+
+.box-4 {
+    position: absolute;
+    left: 25%;
+    top: 12rem;
+    width: 6rem;
+    height: 6rem;
+}
+
+.box-5 {
+    position: absolute;
+    bottom: 18rem;
+    right: 30%;
+    width: 5rem;
+    height: 5rem;
+}
+
+.box-6 {
+    position: absolute;
+    bottom: 40%;
+    left: 5%;
+    width: 6rem;
+    height: 6rem;
+}
+
+.box-7 {
+    position: absolute;
+    bottom: 10rem;
+    left: 20%;
+    width: 7rem;
+    height: 7rem;
+}
+
+.box-8 {
+    position: absolute;
+    bottom: 10rem;
+    right: 18%;
+    width: 5rem;
+    height: 5rem;
+}
+
+.box-9 {
+    position: absolute;
+    top: 15rem;
+    right: 8%;
+    width: 6rem;
+    height: 6rem;
+}
+
+
+.box-10 {
+    position: absolute;
+    bottom: 10rem;
+    left: 46%;
+    width: 6rem;
+    height: 6rem;
+}
+
+.box-11 {
+    position: absolute;
+    top: 5rem;
+    left: 22%;
+    width: 5rem;
+    height: 5rem;
+}
+
+.box-12 {
+    position: absolute;
+    top: 12rem;
+    right: 40%;
+    width: 6rem;
+    height: 6rem;
+}
+
+.box-13 {
+    position: absolute;
+    bottom: 10rem;
+    left: 5%;
+    width: 4rem;
+    height: 4rem;
+}
+
+.box-14 {
+    position: absolute;
+    bottom: 14rem;
+    left: 34%;
+    width: 6rem;
+    height: 6rem;
+}
+
+.box-15 {
+    position: absolute;
+    bottom: 12rem;
+    right: 4%;
+    width: 6rem;
+    height: 6rem;
+}
+
+
+.box-1,
+.box-2,
+.box-3,
+.box-4,
+.box-5,
+.box-6,
+.box-7,
+.box-8,
+.box-9,
+.box-10,
+.box-11,
+.box-12,
+.box-13,
+.box-14,
+.box-15 {
+    z-index: 10;
+}
+
+.popup__box {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px) brightness(70%);
+    -webkit-backdrop-filter: blur(8px) brightness(70%);
+    display: flex;
+    justify-content: center;
+
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(.25);
+}
+
+.popup__box-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    width: 67%;
+    transform: translateY(6%);
+}
+
+.popup__box-background {
+    height: 100%;
+    width: 100%;
+}
+
+.popup__box-img {
+    height: 100%;
+    width: 100%;
+}
+
+.close__box {
+    transform: translateY(20%);
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, .7);
+    padding: 6px 20px;
+}
+
+.close__box:hover,
+.close__box:focus {
+    background-color: rgb(238, 64, 64);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.close-btn {
+    color: rgb(255, 255, 255);
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 45px;
+}
+
+.sign__board-box {
+    position: absolute;
+    left: 50%;
+    top: -3%;
+    height: 12rem;
+    width: 20rem;
+    z-index: 3;
+    opacity: 0;
+    animation: slide 2s linear forwards;
+}
+
+.sign__board {
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate(-50%, -250px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+.back-box {
+    position: absolute;
+    right: 5%;
+    top: -1%;
+    height: 10rem;
+    width: 12rem;
+    z-index: 3;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fade 1s linear 12s forwards, vibrate 2s linear 13s infinite alternate forwards;
+}
+
+.back-btn {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes fade {
+    0% {
+        visibility: visible;
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(20px);
+    }
+}
+
+.zoomIn {
+    animation: zoomIn .4s linear forwards;
+}
+
+.zoomOut {
+    animation: zoomOut .3s linear forwards;
+}
+
+@keyframes zoomIn {
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(.25);
+    }
+}

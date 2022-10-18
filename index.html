@@ -1,1 +1,37 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Get Started</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="loader">
+        <video autoplay class="flashBack" loop>
+            <source src="video/My Movie 3.mp4" type="video/mp4" class="flashBack">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="homepage animate-bottom" id="myDiv">
+        <img src="img/Homepage bg.png" alt="Snow Background" class="back">
+        <div class="board">
+            <a href="main.html">
+                <img src="img/final.png" alt="getting-started-board" class="getting-started">
+            </a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    window.onload = function () {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+    };
+</script>
+
+</html>
